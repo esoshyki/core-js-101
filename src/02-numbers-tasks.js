@@ -100,12 +100,9 @@ const getLinearEquationRoot = (a, b) => (0 - b) / a;
  *   (0,1) (1,2)     => 0
  */
 const getAngleBetweenVectors = (x1, y1, x2, y2) => {
-  const dx = x2 - x1;
-  const dy = y2 - y1;
-  if (Math.abs(dx) === 2 || Math.abs(dy) === 2) return Math.PI;
-  if (Math.abs(dx) === 1 && Math.abs(dy) === 1) return (Math.PI * 2) / 3;
-  if (Math.abs(dx) === 1 || Math.abs(dy) === 1) return Math.PI / 2;
-  return 0;
+  const dx = Math.abs(x2 - x1);
+  const dy = Math.abs(y2 - y1);
+  return (Math.PI / 2) * Math.max(dx, dy);
 };
 
 /**
@@ -120,9 +117,7 @@ const getAngleBetweenVectors = (x1, y1, x2, y2) => {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
-}
+const getLastDigit = (value) => parseInt((`${value}`).split('').pop(), 10);
 
 
 /**
@@ -136,9 +131,7 @@ function getLastDigit(/* value */) {
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-function parseNumberFromString(/* value */) {
-  throw new Error('Not implemented');
-}
+const parseNumberFromString = (value) => parseFloat(value);
 
 /**
  * Returns a diagonal length of the rectangular parallelepiped given by its sides a,b,c.
@@ -151,11 +144,9 @@ function parseNumberFromString(/* value */) {
  * @example:
  *   1,1,1   => 1.7320508075688772
  *   3,3,3   => 5.196152422706632
- *   1,2,3   => 3.741657386773941
+ *   1,2,3   => 3.741657386773941s
  */
-function getParallelipidedDiagonal(/* a, b, c */) {
-  throw new Error('Not implemented');
-}
+const getParallelipidedDiagonal = (a, b, c) => Math.sqrt(a ** 2 + b ** 2 + c ** 2);
 
 /**
  * Returns the number rounded to specified power of 10.
@@ -174,9 +165,7 @@ function getParallelipidedDiagonal(/* a, b, c */) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(/* num, pow */) {
-  throw new Error('Not implemented');
-}
+const roundToPowerOfTen = (num, pow) => 10 ** pow * Math.round(num / 10 ** pow);
 
 /**
  * Returns true is the number is prime; otherwise false.
@@ -195,9 +184,10 @@ function roundToPowerOfTen(/* num, pow */) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
-}
+const isPrime = (n) => {
+  for (let i = 2; i < n; i += 1) if (n % i === 0) return false;
+  return n > 1;
+};
 
 /**
  * Tries to convert value to number and returns it if conversion was successfull;
@@ -214,9 +204,7 @@ function isPrime(/* n */) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-  throw new Error('Not implemented');
-}
+const toNumber = (value, def) => (Number(value) ? Number(value) : def);
 
 module.exports = {
   getRectangleArea,
