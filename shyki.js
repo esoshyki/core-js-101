@@ -1,13 +1,11 @@
-const getAngleBetweenVectors = (x1, y1, x2, y2) => {
-
-    const dx = x2 - x1;
-
-    const dy = y2 - y1;
-
-    if (Math.abs(dx) === 2 || Math.abs(dy) === 2) return Math.PI;
-    if (Math.abs(dx) === 1 && Math.abs(dy) === 1) return 2 * Math.PI / 3;
-    if (Math.abs(dx) === 1 || Math.abs(dy) === 1) return Math.PI / 2;
-    if (dx === 0 && dy === 0) return 0
+const swapHeadAndTail = arr => {
+    const len = arr.length;
+    if (len === 1) return arr
+    const haflen = Math.floor(len / 2);
+    const head = arr.slice(0, haflen);
+    const tail = arr.slice(-haflen);
+    const middle = (len%2) ? [arr[haflen]] : [];
+    return tail.concat(middle).concat(head)
 }
 
-console.log(getAngleBetweenVectors(1, 0, 0, 1))
+console.log(swapHeadAndTail([ 1 ]))
