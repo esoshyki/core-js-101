@@ -256,7 +256,7 @@ const propagateItemsByPositionIndex = (arr) => arr.reduce((a, b, i) => {
  *   [ 1,2,3,4,5,6,7,8,9,10 ] => [ 10, 9, 8 ]
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
-const get3TopItems = (arr) => arr.sort((a, b) => a < b).slice(0, 3);
+const get3TopItems = (arr) => arr.sort((a, b) => b - a).slice(0, 3);
 
 
 /**
@@ -304,7 +304,7 @@ const sortDigitNamesByNumericOrder = (arr) => {
     nine: 9,
   };
 
-  return arr.sort((a, b) => dict[b] < dict[a]);
+  return arr.sort((a, b) => dict[a] - dict[b]);
 };
 
 /**
