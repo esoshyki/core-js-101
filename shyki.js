@@ -1,11 +1,13 @@
-const swapHeadAndTail = arr => {
-    const len = arr.length;
-    if (len === 1) return arr
-    const haflen = Math.floor(len / 2);
-    const head = arr.slice(0, haflen);
-    const tail = arr.slice(-haflen);
-    const middle = (len%2) ? [arr[haflen]] : [];
-    return tail.concat(middle).concat(head)
-}
+const timeSpanToString = (startDate, endDate) => {
+    console.log(startDate, endDate)
+    const start = startDate.valueOf();
+    const end = endDate.valueOf();    
+    const res = new Date();
+    res.setTime(end-start);
+    console.log(res)
+  }
+  
+const startd = new Date(2000,1,1,10,0,0)
+const endd = new Date(2000,1,1,15,20,10,453) 
 
-console.log(swapHeadAndTail([ 1 ]))
+console.log(timeSpanToString(startd, endd))
