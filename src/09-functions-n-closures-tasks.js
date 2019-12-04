@@ -147,10 +147,23 @@ const retry = (func, attempts) => {
  * cos(3.141592653589793) ends
  *
  */
-function logger(/* func, logFunc */) {
-  throw new Error('Not implemented');
-}
-
+const logger = (func, logFunc) => (...args) => {
+  const s = [...args].reduce((a, b) => {
+    let str;
+    if (typeof b === 'object') {
+      let arr = '[';
+      b.forEach((element) => {
+        arr += typeof element !== 'number' ? (`"${element}",`) : `${element},`;
+      });
+      str += `${arr.slice(0, -1)}],`;
+    } else str = `${a}${b},`;
+    return str;
+  }, '');
+  logFunc(`${func.name}(${s.slice(0, -1)}) starts`.replace('undefined', ''));
+  const res = func(...args);
+  logFunc(`${func.name}(${s.slice(0, -1)}) ends`.replace('undefined', ''));
+  return res;
+};
 
 /**
  * Return the function with partial applied arguments

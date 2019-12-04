@@ -1,4 +1,25 @@
-const partialUsingArguments = (fn, ...args) => (...newArgs) => fn(...args, ...newArgs)
+const logger = (func, logFunc) => (...args) => {
+  console.log(args)
+  const s = [...args].reduce((a,b) => {
+    let str ;
+    if (typeof b === 'object') {
+      let arr = '['
+      b.forEach(element => {
+          console.log(element);
+          arr += `"${element}",`;
+      });
+      str += arr.slice(0,-1) + '],'
+    }
+    else str = a + `${b},`;
+    return str.slice(0, -1)
+  },'');
+  console.log(s);
+  logFunc(`${func.name}(${s}) starts`);
+  const res = func(args);
+  logFunc(`${func.name}(${s}) ends`);
+  return res;
+};
 
-const fn = (x1, x2, x3, x4) => x1 + x2 + x3 + x4;
-console.log(partialUsingArguments(fn, 'a')('b','c','d'))
+const cosLogger = logger(Math.cos, console.log);
+
+const actual = cosLogger(['expected', 'test', 1], 0);
