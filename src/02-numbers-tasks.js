@@ -7,7 +7,6 @@
  *                                                                                           *
  ******************************************************************************************* */
 
-
 /**
  * Returns an area of a rectangle given by width and heigth.
  *
@@ -20,7 +19,6 @@
  *   5, 5  => 25
  */
 const getRectangleArea = (width, height) => width * height;
-
 
 /**
  * Returns a circumference of circle given by radius.
@@ -80,7 +78,6 @@ const getDistanceBetweenPoints = (x1, y1, x2, y2) => Math.sqrt((x2 - x1) ** 2 + 
  */
 const getLinearEquationRoot = (a, b) => (0 - b) / a;
 
-
 /**
  * Returns an angle (in radians) between two vectors given by xi and yi,
  * coordinates in Cartesian plane.
@@ -118,7 +115,6 @@ const getAngleBetweenVectors = (x1, y1, x2, y2) => {
  *     0     => 0
  */
 const getLastDigit = (value) => parseInt((`${value}`).split('').pop(), 10);
-
 
 /**
  * Returns a number by given string representation.

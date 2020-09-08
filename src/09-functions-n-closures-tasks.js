@@ -8,7 +8,6 @@
  *                                                                                             *
  ********************************************************************************************* */
 
-
 /**
  * Returns the functions composition of two specified functions f(x) and g(x).
  * The result of compose is to be a function of one argument, (lets call the argument x),
@@ -24,7 +23,6 @@
  *
  */
 const getComposition = (f, g) => (...args) => f(g(...args));
-
 
 /**
  * Returns the math power function with the specified exponent
@@ -44,7 +42,6 @@ const getComposition = (f, g) => (...args) => f(g(...args));
  */
 const getPowerFunction = (exponent) => (n) => n ** exponent;
 
-
 /**
  * Returns the polynom function of one argument based on specified coefficients.
  * See: https://en.wikipedia.org/wiki/Polynomial#Definition
@@ -63,7 +60,6 @@ const getPolynom = (...ag) => {
   const f = (x) => (l ? [...ag].reduceRight((a, b, i) => a + b * (x ** (l - i - 1))) : null);
   return f;
 };
-
 
 /**
  * Memoizes passed function and returns function
@@ -91,7 +87,6 @@ const memoize = (func) => {
     return res;
   };
 };
-
 
 /**
  * Returns the function trying to call the passed function and if it throws,
@@ -122,7 +117,6 @@ const retry = (func, attempts) => {
     return ans;
   };
 };
-
 
 /**
  * Returns the logging wrapper for the specified method,
@@ -179,7 +173,6 @@ const logger = (func, logFunc) => (...args) => {
  *   partialUsingArguments(fn, 'a','b','c','d')() => 'abcd'
  */
 const partialUsingArguments = (fn, ...args) => (...newArgs) => fn(...args, ...newArgs);
-
 
 /**
  * Returns the id generator function that returns next integer starting

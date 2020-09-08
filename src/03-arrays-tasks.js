@@ -7,7 +7,6 @@
  *                                                                                            *
  ******************************************************************************************** */
 
-
 /**
  * Returns an index of the specified element in array or -1 if element is not found
  *
@@ -33,7 +32,6 @@ const findElement = (arr, value) => arr.indexOf(value);
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
 const generateOdds = (len) => '1'.repeat(len).split('').map((el, idx) => (el * idx * 2) + 1);
-
 
 /**
  * Returns the doubled array - elements of the specified array
@@ -103,7 +101,6 @@ const removeFalsyValues = (arr) => arr.filter((el) => !el === false);
  */
 const getUpperCaseStrings = (arr) => arr.map((el) => el.toUpperCase());
 
-
 /**
  * Returns the array of string lengths from the specified string array.
  *
@@ -151,7 +148,6 @@ const getHead = (arr, n) => arr.slice(0, n);
  */
 const getTail = (arr, n) => arr.slice(-n);
 
-
 /**
  * Returns CSV represebtation of two-dimentional numeric array.
  * https://en.wikipedia.org/wiki/Comma-separated_values
@@ -174,7 +170,6 @@ const getTail = (arr, n) => arr.slice(-n);
  */
 const toCsvText = (arr) => arr.reduce((a, b) => { const res = `${a}${b.join(',')}\n`; return res; }, '').slice(0, -1);
 
-
 /**
  * Transforms the numeric array into the according array of squares:
  *   f(x) = x * x
@@ -187,7 +182,6 @@ const toCsvText = (arr) => arr.reduce((a, b) => { const res = `${a}${b.join(',')
  *   [ 10, 100, -1 ]      => [ 100, 10000, 1 ]
  */
 const toArrayOfSquares = (arr) => arr.map((el) => el ** 2);
-
 
 /**
  * Transforms the numeric array to the according moving sum array:
@@ -222,7 +216,6 @@ const getMovingSum = (arr) => {
  */
 const getSecondItems = (arr) => arr.filter((el, idx) => idx % 2 !== 0);
 
-
 /**
  * Propagates every item in sequence its position times
  * Returns an array that consists of: one first item, two second items, tree third items etc.
@@ -242,7 +235,6 @@ const propagateItemsByPositionIndex = (arr) => arr.reduce((a, b, i) => {
   return res.concat(Array(i + 1).fill(b));
 }, []);
 
-
 /**
  * Returns the 3 largest numbers from the specified array
  *
@@ -257,7 +249,6 @@ const propagateItemsByPositionIndex = (arr) => arr.reduce((a, b, i) => {
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
 const get3TopItems = (arr) => arr.sort((a, b) => b - a).slice(0, 3);
-
 
 /**
  * Returns the number of positive numbers from specified array
@@ -494,7 +485,6 @@ function group(array, key, value) {
   return map;
 }
 
-
 /**
  * Projects each element of the specified array to a sequence
  * and flattens the resulting sequences into one array.
@@ -510,7 +500,6 @@ function group(array, key, value) {
  */
 
 const selectMany = (arr, childrenSelector) => [].concat(...arr.map(childrenSelector));
-
 
 /**
  * Returns an element from the multidimentional array by the specified indexes.
@@ -553,7 +542,6 @@ const swapHeadAndTail = (arr) => {
   const middle = (len % 2) ? [arr[haflen]] : [];
   return tail.concat(middle).concat(head);
 };
-
 
 module.exports = {
   findElement,

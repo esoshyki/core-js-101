@@ -8,7 +8,6 @@
  *                                                                                           *
  ******************************************************************************************* */
 
-
 /**
  * Returns the regexp that matches a GUID string representation
  * '{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}',
@@ -51,7 +50,6 @@ const getRegexForGuid = () => /{[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-
  *
  */
 const getRegexForPitSpot = () => /s+|w+|i+/;
-
 
 /**
  * Returns the password validator regex.

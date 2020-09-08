@@ -6,7 +6,6 @@
  *                                                                                                *
  ************************************************************************************************ */
 
-
 /**
  * Returns the 'Fizz','Buzz' or an original number using the following rules:
  * 1) return original number
@@ -33,7 +32,6 @@ const getFizzBuzz = (num) => {
   if (num % 5 === 0) return 'Buzz';
   return num;
 };
-
 
 /**
  * Returns the factorial of the specified integer n.
@@ -62,7 +60,6 @@ const getFactorial = (n) => (n > 0 ? n * getFactorial(n - 1) : 1);
  */
 const getSumBetweenNumbers = (n1, n2) => (n2 > n1 ? n2 + getSumBetweenNumbers(n1, n2 - 1) : n1);
 
-
 /**
  * Returns true, if a triangle can be built with the specified sides a, b, c
  * and false in any other ways.
@@ -79,7 +76,6 @@ const getSumBetweenNumbers = (n1, n2) => (n2 > n1 ? n2 + getSumBetweenNumbers(n1
  *   10,10,10 =>  true
  */
 const isTriangle = (a, b, c) => (a + b > c) && (a + c > b) && (b + c > a);
-
 
 /**
  * Returns true, if two specified axis-aligned rectangles overlap, otherwise false.
@@ -129,7 +125,6 @@ const doRectanglesOverlap = (rect1, rect2) => {
   return true;
 };
 
-
 /**
  * Returns true, if point lies inside the circle, otherwise false.
  * Circle is an object of
@@ -161,7 +156,6 @@ const isInsideCircle = (circle, point) => {
   const dy = point.y - circle.center.y;
   return Math.hypot(dx, dy) < circle.radius;
 };
-
 
 /**
  * Returns the first non repeated char in the specified strings otherwise returns null.
@@ -213,7 +207,6 @@ const getIntervalString = (a, b, sencl, eencl) => {
   return begin + end;
 };
 
-
 /**
  * Reverse the specified string (put all chars in reverse order)
  *
@@ -228,7 +221,6 @@ const getIntervalString = (a, b, sencl, eencl) => {
  */
 const reverseString = (str) => str.split('').reverse().join('');
 
-
 /**
  * Reverse the specified integer number (put all digits in reverse order)
  *
@@ -242,7 +234,6 @@ const reverseString = (str) => str.split('').reverse().join('');
  *   34143 => 34143
  */
 const reverseInteger = (num) => (`${num}`).split('').reverse().join('') * 1;
-
 
 /**
  * Validates the CCN (credit card number) and return true if CCN is valid
@@ -300,7 +291,6 @@ const getDigitalRoot = (num) => {
   return newnum < 10 ? newnum : getDigitalRoot(newnum);
 };
 
-
 /**
  * Returns true if the specified string has the balanced brackets and false otherwise.
  * Balanced means that is, whether it consists entirely of pairs of opening/closing brackets
@@ -336,7 +326,6 @@ const isBracketsBalanced = (str) => {
     return stack;
   }, []).length === 0;
 };
-
 
 /**
  * Returns the string with n-ary (binary, ternary, etc, where n <= 10)
@@ -398,7 +387,6 @@ function getCommonDirectoryPath(pathes) {
   return '';
 }
 
-
 /**
  * Returns the product of two specified matrixes.
  * See details: https://en.wikipedia.org/wiki/Matrix_multiplication
@@ -431,7 +419,6 @@ function getMatrixProduct(m1, m2) {
   }
   return result;
 }
-
 
 /**
  * Returns the evaluation of the specified tic-tac-toe position.
@@ -486,7 +473,6 @@ function evaluateTicTacToePosition(position) {
   }
   return won;
 }
-
 
 module.exports = {
   getFizzBuzz,

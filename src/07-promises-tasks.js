@@ -5,7 +5,6 @@
  *                                                                                                *
  ************************************************************************************************ */
 
-
 /**
  * Return Promise object that is resolved with string value === 'Hooray!!! She said "Yes"!',
  * if boolean value === true is passed, resolved with string value === 'Oh no, she said "No".',
@@ -34,7 +33,6 @@ const willYouMarryMe = (isPositiveAnswer) => new Promise((res, rej) => {
     res(isPositiveAnswer ? 'Hooray!!! She said "Yes"!' : 'Oh no, she said "No".');
   }
 });
-
 
 /**
  * Return Promise object that should be resolved with array containing plain values.
@@ -96,7 +94,6 @@ const getFastestPromise = (array) => Promise.race(array).then((data) => data, (e
  *
  */
 const chainPromises = (arr, action) => processAllPromises(arr).then((data) => data.reduce(action));
-
 
 module.exports = {
   willYouMarryMe,

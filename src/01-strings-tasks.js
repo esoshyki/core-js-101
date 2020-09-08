@@ -5,7 +5,6 @@
  *                                                                                           *
  ******************************************************************************************* */
 
-
 /**
  * Returns the result of concatenation of two strings.
  *
@@ -59,7 +58,6 @@ const getStringFromTemplate = (firstName, lastName) => `Hello, ${firstName} ${la
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 const extractNameFromTemplate = (value) => value.replace('Hello, ', '').replace('!', '');
-
 
 /**
  * Returns a first char of the given string.
@@ -125,7 +123,6 @@ const removeFirstOccurrences = (str, value) => str.replace(value, '');
  */
 const unbracketTag = (str) => str.replace('<', '').replace('>', '');
 
-
 /**
  * Converts all characters of the specified string into the upper case
  *
@@ -179,7 +176,6 @@ const extractEmails = (str) => str.split(';');
  */
 const getRectangleString = (width, height) => `┌${'─'.repeat(width - 2)}┐\n${(`│${' '.repeat(width - 2)}│\n`).repeat(height - 2)}└${'─'.repeat(width - 2)}┘\n`;
 
-
 /**
  * Encode specified string with ROT13 cipher
  * See details:  https://en.wikipedia.org/wiki/ROT13
@@ -219,7 +215,6 @@ const encodeToRot13 = (str) => {
  */
 const isString = (value) => (value ? value.constructor === String.prototype.constructor : false);
 
-
 /**
  * Returns playid card id.
  *
@@ -248,7 +243,6 @@ const getCardId = (value) => ['A♣', '2♣', '3♣', '4♣', '5♣', '6♣', '7
   'A♦', '2♦', '3♦', '4♦', '5♦', '6♦', '7♦', '8♦', '9♦', '10♦', 'J♦', 'Q♦', 'K♦',
   'A♥', '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥',
   'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠'].indexOf(value);
-
 
 module.exports = {
   concatenateStrings,

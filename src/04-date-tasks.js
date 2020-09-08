@@ -6,7 +6,6 @@
  *                                                                                           *
  ******************************************************************************************* */
 
-
 /**
  * Parses a rfc2822 string date representation into date value
  * For rfc2822 date specification refer to : http://tools.ietf.org/html/rfc2822#page-14
@@ -34,7 +33,6 @@ const parseDataFromRfc2822 = (value) => Date.parse(value);
  */
 const parseDataFromIso8601 = (value) => Date.parse(value);
 
-
 /**
  * Returns true if specified date is leap year and false otherwise
  * Please find algorithm here: https://en.wikipedia.org/wiki/Leap_year#Algorithm
@@ -56,7 +54,6 @@ const isLeapYear = (date) => {
   if (year % 400 !== 0) return false;
   return true;
 };
-
 
 /**
  * Returns the string represention of the timespan between two dates.
@@ -91,7 +88,6 @@ const timeSpanToString = (startDate, endDate) => {
   return `${hstr}:${mstr}:${sstr}.${msstr}`;
 };
 
-
 /**
  * Returns the angle (in radians) between the hands of an analog clock
  * for the specified Greenwich time.
@@ -113,7 +109,6 @@ function angleBetweenClockHands(date) {
   const abs = (d) => Math.abs(d * (Math.PI / 180));
   return dif > 180 ? abs(360 - dif) : abs(dif);
 }
-
 
 module.exports = {
   parseDataFromRfc2822,
